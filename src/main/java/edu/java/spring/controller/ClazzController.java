@@ -52,4 +52,11 @@ public class ClazzController {
         model.getModelMap().put("clazzObj", clazz);
         return model;
     }
+    @RequestMapping(value = "/clazz/pdf", produces ="application/pdf")
+    public ModelAndView viewPdf(){
+        JavaClazz clazz = new JavaClazz(studentDAO.list(""));
+        ModelAndView model = new ModelAndView("pdfView");
+        model.getModelMap().put("clazzObj", clazz);
+        return model;
+    }
 }

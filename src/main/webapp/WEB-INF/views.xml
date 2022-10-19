@@ -6,5 +6,7 @@
 
     <bean id="excelView" class="edu.java.spring.view.ExcelBuilder"></bean>
 
+    <bean id="pdfView" class="edu.java.spring.view.PdfView"></bean>
+
     <bean id="ClazzView" class="org.springframework.web.servlet.view.xslt.XsltView"></bean>
 </beans>
