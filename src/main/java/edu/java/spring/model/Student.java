@@ -31,7 +31,7 @@ public class Student {
         this.name = name;
         this.age = age;
     }
-    @XmlAttribute
+//    @XmlAttribute
     @XmlElement
     public int getId() {
         return id;

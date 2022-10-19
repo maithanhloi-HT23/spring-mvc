@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-<!--    <bean id="excelView" class="edu.java.spring.view.ExcelBuilder"></bean>-->
+    <bean id="excelView" class="edu.java.spring.view.ExcelBuilder"></bean>
 
     <bean id="ClazzView" class="org.springframework.web.servlet.view.xslt.XsltView"></bean>
 </beans>
