@@ -3,6 +3,9 @@ package edu.java.spring.controller;
 import edu.java.spring.dao.impl.StudentDAOImpl;
 import edu.java.spring.model.JavaClazz;
 import edu.java.spring.utils.XSLTUtils;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -58,5 +61,12 @@ public class ClazzController {
         ModelAndView model = new ModelAndView("pdfView");
         model.getModelMap().put("clazzObj", clazz);
         return model;
+    }
+    @RequestMapping(value = "/clazz/report", produces ="application/pdf")
+    public ModelAndView viewReport(){
+        JRDataSource dataSource = new JRBeanCollectionDataSource(studentDAO.list(""));
+        ModelAndView mv = new ModelAndView("pdfReport");
+        mv.addObject("dataSource", dataSource);
+        return mv;
     }
 }
